@@ -3,26 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B504DB6925A88B6500F5AA62 /* yoga.json in Resources */ = {isa = PBXBuildFile; fileRef = B504DB6825A88B6500F5AA62 /* yoga.json */; };
 		B5A087D325A87F2F00841445 /* _8_animatedSplashScreenApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A087D225A87F2F00841445 /* _8_animatedSplashScreenApp.swift */; };
 		B5A087D525A87F2F00841445 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A087D425A87F2F00841445 /* ContentView.swift */; };
 		B5A087D725A87F3700841445 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5A087D625A87F3700841445 /* Assets.xcassets */; };
 		B5A087DA25A87F3700841445 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5A087D925A87F3700841445 /* Preview Assets.xcassets */; };
+		B5A087E725A8823400841445 /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = B5A087E625A8823400841445 /* splash.json */; };
 		C2EAC849332BB04D28BC5922 /* Pods_08_animatedSplashScreen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E689C661E6F5404E9438FF7 /* Pods_08_animatedSplashScreen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		509957A2ECA86F0D433EEE73 /* Pods-08_animatedSplashScreen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-08_animatedSplashScreen.release.xcconfig"; path = "Target Support Files/Pods-08_animatedSplashScreen/Pods-08_animatedSplashScreen.release.xcconfig"; sourceTree = "<group>"; };
 		5E689C661E6F5404E9438FF7 /* Pods_08_animatedSplashScreen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_08_animatedSplashScreen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B504DB6825A88B6500F5AA62 /* yoga.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = yoga.json; sourceTree = "<group>"; };
 		B5A087CF25A87F2F00841445 /* 08_animatedSplashScreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 08_animatedSplashScreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A087D225A87F2F00841445 /* _8_animatedSplashScreenApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _8_animatedSplashScreenApp.swift; sourceTree = "<group>"; };
 		B5A087D425A87F2F00841445 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B5A087D625A87F3700841445 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5A087D925A87F3700841445 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B5A087DB25A87F3700841445 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5A087E625A8823400841445 /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		D6C06E4A231102B8D1EA69C3 /* Pods-08_animatedSplashScreen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-08_animatedSplashScreen.debug.xcconfig"; path = "Target Support Files/Pods-08_animatedSplashScreen/Pods-08_animatedSplashScreen.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -44,7 +48,6 @@
 				D6C06E4A231102B8D1EA69C3 /* Pods-08_animatedSplashScreen.debug.xcconfig */,
 				509957A2ECA86F0D433EEE73 /* Pods-08_animatedSplashScreen.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -77,6 +80,8 @@
 		B5A087D125A87F2F00841445 /* 08_animatedSplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				B5A087E625A8823400841445 /* splash.json */,
+				B504DB6825A88B6500F5AA62 /* yoga.json */,
 				B5A087D225A87F2F00841445 /* _8_animatedSplashScreenApp.swift */,
 				B5A087D425A87F2F00841445 /* ContentView.swift */,
 				B5A087D625A87F3700841445 /* Assets.xcassets */,
@@ -154,7 +159,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5A087DA25A87F3700841445 /* Preview Assets.xcassets in Resources */,
+				B504DB6925A88B6500F5AA62 /* yoga.json in Resources */,
 				B5A087D725A87F3700841445 /* Assets.xcassets in Resources */,
+				B5A087E725A8823400841445 /* splash.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
