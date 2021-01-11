@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Lottie
+import Combine
 
 struct ContentView: View {
     
@@ -31,30 +32,42 @@ struct SplashScreen: View {
     // Login Details...
     
     @State var phNo = ""
+    @State private var keyboardHeight: CGFloat = 0
     
     
     var body: some View{
         
         VStack {
+            
             ZStack {
                 Color("bg")
                     .ignoresSafeArea()
+                ZStack {
+                    VStack {
+                AnimatedView(show: $show)
+                    // default Frame...
+                    .frame(width: 0, height: UIScreen.main.bounds.height / 2)
+                    .padding(.bottom, -10)
+                        
+                    
+                    
+                        Rectangle()
+                            .foregroundColor(.clear)
+                            .frame(width: 100, height: 200)
+                            
+                    
+                    }
+                }
+                
+//                    .aspectRatio(contentMode: .fit)
                 VStack {
-                    ZStack {
-                    AnimatedView(show: $show)
-                        // default Frame...
                     
                         
-                        .frame(width: 0, height: UIScreen.main.bounds.height / 2)
-                        
-                        .padding(.bottom, -10)
-                    }
-//                    .aspectRatio(contentMode: .fit)
-                        
-                        
+                    Spacer()
                     
                      
                     VStack {
+                       // vstack white window rect
                         HStack {
                             VStack(alignment: .leading, spacing: 10, content: {
                                 Text("Login")
@@ -81,6 +94,7 @@ struct SplashScreen: View {
                                 
                                 TextField("", text: $phNo)
                                     .foregroundColor(Color("login"))
+                                    .keyboardType(.numberPad)
                             }
                             
                             Divider()
@@ -148,11 +162,22 @@ struct SplashScreen: View {
                                 .clipShape(Capsule())
                             })
                         }
-                    }
+                    } // vstack white window rect
                     .padding()
-                    .background(Color.white.opacity(0.5))
+                    .background(Color.white.opacity(0.8))
                     .cornerRadius(20)
-                    .padding()
+                    
+                    // padding keyboard on
+//                    .padding(.bottom, keyboardHeight)
+                    .padding(.horizontal, 10)
+                    
+                    // push view when keyboard on
+                    .onReceive(Publishers.keyboardHeight) { self.keyboardHeight = $0 }
+                    
+                    // clic screen keyboard hide
+                    .onTapGesture {
+                        UIApplication.shared.windows.first?.rootViewController?.view.endEditing(true)
+                    }
                     
                     // Bottom To up Transition..
                     
@@ -202,4 +227,31 @@ struct AnimatedView: UIViewRepresentable {
     }
     
     
+}
+
+
+
+///////////////////////// extension \\\\\\\\\\\\\\\\\\\
+// extension keyboard publisher and notification..... (import Combine)
+
+extension Publishers {
+    // 1.
+    static var keyboardHeight: AnyPublisher<CGFloat, Never> {
+        // 2.
+        let willShow = NotificationCenter.default.publisher(for: UIApplication.keyboardWillShowNotification)
+            .map { $0.keyboardHeight }
+        
+        let willHide = NotificationCenter.default.publisher(for: UIApplication.keyboardWillHideNotification)
+            .map { _ in CGFloat(0) }
+        
+        // 3.
+        return MergeMany(willShow, willHide)
+            .eraseToAnyPublisher()
+    }
+}
+
+extension Notification {
+    var keyboardHeight: CGFloat {
+        return (userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect)?.height ?? 0
+    }
 }
