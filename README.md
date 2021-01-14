@@ -2,7 +2,7 @@
 
 08: animatedSplashScreen
 
-<img src="https://media.giphy.com/media/GCS3RblaQTSkpIUEyw/giphy.gif" width="390" height="844"/>  
+<img src="https://media.giphy.com/media/njWntoShbXFIVe3iIE/giphy.gif" width="390" height="844"/>  
 
 
 
